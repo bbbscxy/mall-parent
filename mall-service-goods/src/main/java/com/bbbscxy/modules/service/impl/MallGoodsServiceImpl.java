@@ -5,7 +5,7 @@ import com.bbbscxy.modules.entity.MallGoods;
 import com.bbbscxy.modules.mapper.MallGoodsMapper;
 import com.bbbscxy.modules.service.MallGoodsService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
+import org.apache.dubbo.config.annotation.DubboService;
 
 /**
  * @作者 Administrator
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
  * @说明 商品业务层实现类
  */
 @Slf4j
-@Service
+@DubboService
 public class MallGoodsServiceImpl extends BaseServiceImpl<MallGoodsMapper, MallGoods> implements MallGoodsService {
 
 }

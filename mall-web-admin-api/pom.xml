@@ -8,7 +8,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>mall-service-goods</artifactId>
+    <artifactId>mall-web-admin-api</artifactId>
 
     <properties>
         <mall.common.version>1.0-SNAPSHOT</mall.common.version>
@@ -17,9 +17,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.bbbscxy</groupId>
-            <artifactId>mall-common</artifactId>
-            <version>${mall.common.version}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>com.bbbscxy</groupId>
