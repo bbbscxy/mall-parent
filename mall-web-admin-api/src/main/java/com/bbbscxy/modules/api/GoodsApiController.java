@@ -1,4 +1,4 @@
-package com.bbbscxy.modules.controller;
+package com.bbbscxy.modules.api;
 
 import com.bbbscxy.modules.entity.MallGoods;
 import com.bbbscxy.modules.service.MallGoodsService;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @说明
  */
 @RestController
-public class GoodsController {
+public class GoodsApiController {
 
     @DubboReference(url = "dubbo://127.0.0.1:19001")
     private MallGoodsService mallGoodsService;
