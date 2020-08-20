@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bbbscxy.modules.mapper.MallGoodsMapper">
+
+    <sql id="columns">
+        id, `name`
+    </sql>
+
+    <insert id="save" parameterType="MallGoods">
+        INSERT INTO mall_goods(`name`) VALUES(#{name})
+    </insert>
+
+    <delete id="delete" parameterType="Long">
+        DELETE FROM mall_goods WHERE id = #{id}
+    </delete>
+
+    <update id="update" parameterType="MallGoods">
+        UPDATE mall_goods
+        <set>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <select id="get" parameterType="Long" resultType="MallGoods">
+        SELECT <include refid="columns"/>
+        FROM mall_goods
+        WHERE id = #{id}
+    </select>
+
+    <select id="findList" parameterType="MallGoods" resultType="MallGoods">
+        SELECT <include refid="columns"/>
+        FROM mall_goods
+        <where>
+            <if test="name != null and name != ''">
+                name = #{name}
+            </if>
+        </where>
+    </select>
+</mapper>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>mall-parent</artifactId>
+        <groupId>com.bbbscxy</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>mall-service-goods</artifactId>
+
+    <properties>
+        <mall.common.version>1.0-SNAPSHOT</mall.common.version>
+        <mall.api.base.version>1.0-SNAPSHOT</mall.api.base.version>
+        <mall.api.goods.version>1.0-SNAPSHOT</mall.api.goods.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.bbbscxy</groupId>
+            <artifactId>mall-common</artifactId>
+            <version>${mall.common.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.bbbscxy</groupId>
+            <artifactId>mall-api-base</artifactId>
+            <version>${mall.api.base.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.bbbscxy</groupId>
+            <artifactId>mall-api-goods</artifactId>
+            <version>${mall.api.goods.version}</version>
+        </dependency>
+    </dependencies>
+</project>
