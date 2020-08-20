@@ -23,6 +23,7 @@
         <module>mall-service-store</module>
         <module>mall-web-admin-api</module>
         <module>mall-web-front-api</module>
+        <module>mall-service-resource</module>
     </modules>
 
     <properties>
