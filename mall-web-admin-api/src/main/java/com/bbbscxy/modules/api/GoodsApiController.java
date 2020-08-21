@@ -1,5 +1,6 @@
 package com.bbbscxy.modules.api;
 
+import com.bbbscxy.common.response.MallResponseEntity;
 import com.bbbscxy.modules.entity.MallGoods;
 import com.bbbscxy.modules.service.MallGoodsService;
 import org.apache.dubbo.config.annotation.DubboReference;
@@ -20,7 +21,13 @@ public class GoodsApiController {
     private MallGoodsService mallGoodsService;
 
     @RequestMapping("goodsInfo/{id}")
-    public MallGoods goodsInfo(@PathVariable("id") Long id){
-        return mallGoodsService.get(id);
+    public MallResponseEntity<MallGoods> goodsInfo(@PathVariable("id") Long id){
+        return new MallResponseEntity<MallGoods>().success(mallGoodsService.get(id));
+    }
+
+    @RequestMapping("exceptionTest/{id}")
+    public MallResponseEntity<MallGoods> exceptionTest(@PathVariable("id") Long id) {
+        int i = 1/0;
+        return null;
     }
 }

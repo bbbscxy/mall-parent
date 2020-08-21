@@ -8,10 +8,11 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>mall-common</artifactId>
+    <artifactId>mall-service-common</artifactId>
 
     <properties>
-        <mall.api.base.version>1.0-SNAPSHOT</mall.api.base.version>
+        <mall.common.version>1.0-SNAPSHOT</mall.common.version>
+        <mall.api.common.version>1.0-SNAPSHOT</mall.api.common.version>
         <druid.version>1.1.23</druid.version>
         <mysql.version>8.0.21</mysql.version>
         <mybatis.plus.starter.version>3.3.2</mybatis.plus.starter.version>
@@ -21,8 +22,13 @@
         <!-- 模块依赖 -->
         <dependency>
             <groupId>com.bbbscxy</groupId>
-            <artifactId>mall-api-base</artifactId>
-            <version>${mall.api.base.version}</version>
+            <artifactId>mall-common</artifactId>
+            <version>${mall.common.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.bbbscxy</groupId>
+            <artifactId>mall-api-common</artifactId>
+            <version>${mall.api.common.version}</version>
         </dependency>
 
         <!-- 基础依赖 -->
@@ -47,7 +53,6 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>${mybatis.plus.starter.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>

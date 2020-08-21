@@ -10,15 +10,4 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>mall-api-store</artifactId>
 
-    <properties>
-        <mall.common.version>1.0-SNAPSHOT</mall.common.version>
-    </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.bbbscxy</groupId>
-            <artifactId>mall-common</artifactId>
-            <version>${mall.common.version}</version>
-        </dependency>
-    </dependencies>
 </project>

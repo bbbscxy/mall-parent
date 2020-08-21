@@ -11,15 +11,15 @@
     <artifactId>mall-service-goods</artifactId>
 
     <properties>
-        <mall.common.version>1.0-SNAPSHOT</mall.common.version>
+        <mall.service.common.version>1.0-SNAPSHOT</mall.service.common.version>
         <mall.api.goods.version>1.0-SNAPSHOT</mall.api.goods.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.bbbscxy</groupId>
-            <artifactId>mall-common</artifactId>
-            <version>${mall.common.version}</version>
+            <artifactId>mall-service-common</artifactId>
+            <version>${mall.service.common.version}</version>
         </dependency>
         <dependency>
             <groupId>com.bbbscxy</groupId>

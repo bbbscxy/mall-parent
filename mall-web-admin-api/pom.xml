@@ -16,9 +16,17 @@
     </properties>
 
     <dependencies>
+        <!-- spring -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- 模块依赖 -->
+        <dependency>
+            <groupId>com.bbbscxy</groupId>
+            <artifactId>mall-common</artifactId>
+            <version>${mall.common.version}</version>
         </dependency>
         <dependency>
             <groupId>com.bbbscxy</groupId>
