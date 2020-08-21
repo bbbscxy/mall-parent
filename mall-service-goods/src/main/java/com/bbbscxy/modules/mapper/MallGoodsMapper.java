@@ -1,6 +1,6 @@
 package com.bbbscxy.modules.mapper;
 
-import com.bbbscxy.moduels.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.bbbscxy.modules.entity.MallGoods;
 import org.springframework.stereotype.Repository;
 
@@ -11,5 +11,5 @@ import org.springframework.stereotype.Repository;
  * @说明 商品数据层
  */
 @Repository
-public interface MallGoodsMapper extends BaseMapper<MallGoods> {
+public interface MallGoodsMapper extends BaseMapper<MallGoods>{
 }

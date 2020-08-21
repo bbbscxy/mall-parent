@@ -1,5 +1,7 @@
 package com.bbbscxy.common.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -16,5 +18,6 @@ public class BaseEntity implements Serializable{
     /**
      * 主键
      */
+    @TableId(type = IdType.AUTO)
     private Long id;
 }

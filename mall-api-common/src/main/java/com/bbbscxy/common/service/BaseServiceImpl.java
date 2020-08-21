@@ -1,18 +1,20 @@
-package com.bbbscxy.moduels.service;
+package com.bbbscxy.common.service;
 
-import com.bbbscxy.common.service.BaseService;
-import com.bbbscxy.moduels.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 /**
  * @作者 Administrator
- * @时间 2020-08-20 15:18
+ * @时间 2020-08-21 14:36
  * @版本 1.0
- * @说明 业务实现层基类
+ * @说明
  */
-public class BaseServiceImpl<M extends BaseMapper, T> implements BaseService<T> {
+public class BaseServiceImpl<M extends BaseMapper, T> implements BaseService<T>{
 
     @Autowired
     private M mapper;
@@ -23,7 +25,7 @@ public class BaseServiceImpl<M extends BaseMapper, T> implements BaseService<T> 
      * @return 修改条数
      */
     public int save(T entity){
-        return mapper.save(entity);
+        return mapper.insert(entity);
     }
 
     /**
@@ -32,7 +34,7 @@ public class BaseServiceImpl<M extends BaseMapper, T> implements BaseService<T> 
      * @return 修改条数
      */
     public int delete(Long id){
-        return mapper.delete(id);
+        return mapper.deleteById(id);
     }
 
     /**
@@ -41,7 +43,7 @@ public class BaseServiceImpl<M extends BaseMapper, T> implements BaseService<T> 
      * @return 修改条数
      */
     public int update(T entity){
-        return mapper.update(entity);
+        return mapper.updateById(entity);
     }
 
     /**
@@ -50,7 +52,7 @@ public class BaseServiceImpl<M extends BaseMapper, T> implements BaseService<T> 
      * @return 返回实体
      */
     public T get(Long id){
-        return (T) mapper.get(id);
+        return (T) mapper.selectById(id);
     }
 
     /**
@@ -59,6 +61,12 @@ public class BaseServiceImpl<M extends BaseMapper, T> implements BaseService<T> 
      * @return 返回多条记录
      */
     public List<T> findList(T entity){
-        return mapper.findList(entity);
+        QueryWrapper<T> query = new QueryWrapper<T>(entity);
+        return mapper.selectList(query);
+    }
+
+    public IPage<T> findListPage(Page<T> page, T entity) {
+        QueryWrapper<T> query = new QueryWrapper<T>(entity);
+        return mapper.selectPage(page, query);
     }
 }

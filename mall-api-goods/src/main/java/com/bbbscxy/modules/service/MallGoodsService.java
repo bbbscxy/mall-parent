@@ -10,4 +10,5 @@ import com.bbbscxy.modules.entity.MallGoods;
  * @说明 商品业务层
  */
 public interface MallGoodsService extends BaseService<MallGoods>{
+
 }

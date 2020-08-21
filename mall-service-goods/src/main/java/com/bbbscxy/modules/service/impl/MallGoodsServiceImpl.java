@@ -1,6 +1,6 @@
 package com.bbbscxy.modules.service.impl;
 
-import com.bbbscxy.moduels.service.BaseServiceImpl;
+import com.bbbscxy.common.service.BaseServiceImpl;
 import com.bbbscxy.modules.entity.MallGoods;
 import com.bbbscxy.modules.mapper.MallGoodsMapper;
 import com.bbbscxy.modules.service.MallGoodsService;

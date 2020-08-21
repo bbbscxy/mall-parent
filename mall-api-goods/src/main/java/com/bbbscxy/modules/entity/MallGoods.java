@@ -1,5 +1,7 @@
 package com.bbbscxy.modules.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.bbbscxy.common.entity.BaseEntity;
 import lombok.Data;
 import lombok.ToString;
@@ -12,10 +14,12 @@ import lombok.ToString;
  */
 @Data
 @ToString
+@TableName("mall_goods")
 public class MallGoods extends BaseEntity{
 
     /**
      * 商品名称
      */
+    @TableField("name")
     private String name;
 }

@@ -9,14 +9,13 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>mall-common</module>
-        <module>mall-api-base</module>
-
+        <module>mall-api-common</module>
         <module>mall-api-user</module>
         <module>mall-api-goods</module>
         <module>mall-api-order</module>
         <module>mall-api-store</module>
 
+        <module>mall-service-common</module>
         <module>mall-service-user</module>
         <module>mall-service-goods</module>
         <module>mall-service-order</module>

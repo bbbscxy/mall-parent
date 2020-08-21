@@ -1,14 +1,17 @@
-package com.bbbscxy.moduels.mapper;
+package com.bbbscxy.common.service;
+
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
 import java.util.List;
 
 /**
  * @作者 Administrator
- * @时间 2020-08-20 15:20
+ * @时间 2020-08-20 15:15
  * @版本 1.0
- * @说明 数据层基类
+ * @说明 业务层基类
  */
-public interface BaseMapper<T> {
+public interface BaseService<T> {
 
     /**
      * 保存记录
@@ -44,4 +47,6 @@ public interface BaseMapper<T> {
      * @return 返回多条记录
      */
     List<T> findList(T entity);
+
+    IPage<T> findListPage(Page<T> page, T entity);
 }
