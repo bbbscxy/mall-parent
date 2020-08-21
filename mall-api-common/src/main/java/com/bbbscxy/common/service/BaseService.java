@@ -48,5 +48,11 @@ public interface BaseService<T> {
      */
     List<T> findList(T entity);
 
+    /**
+     * 分页查询多条记录
+     * @param page 分页
+     * @param entity 查询条件
+     * @return 返回多条记录
+     */
     IPage<T> findListPage(Page<T> page, T entity);
 }
