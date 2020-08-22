@@ -23,21 +23,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestApiController {
 
-    @DubboReference(url = "${dubbo.goods.reference.url}")
+    @DubboReference
     private MallGoodsService mallGoodsService;
-    @DubboReference(url = "${dubbo.order.reference.url}")
+    /*@DubboReference(url = "${dubbo.order.reference.url}")
     private MallOrderService mallOrderService;
     @DubboReference(url = "${dubbo.store.reference.url}")
     private MallStoreService mallStoreService;
     @DubboReference(url = "${dubbo.member.reference.url}")
-    private MallMemberService mallMemberService;
+    private MallMemberService mallMemberService;*/
 
     @RequestMapping("goods/{id}")
     public MallResponseEntity<MallGoods> testGoods(@PathVariable("id") Long id){
         return new MallResponseEntity<MallGoods>().success(mallGoodsService.get(id));
     }
 
-    @RequestMapping("order/{id}")
+    /*@RequestMapping("order/{id}")
     public MallResponseEntity<MallOrder> testOrder(@PathVariable("id") Long id){
         return new MallResponseEntity<MallOrder>().success(mallOrderService.get(id));
     }
@@ -50,5 +50,5 @@ public class TestApiController {
     @RequestMapping("member/{id}")
     public MallResponseEntity<MallMember> testMember(@PathVariable("id") Long id){
         return new MallResponseEntity<MallMember>().success(mallMemberService.get(id));
-    }
+    }*/
 }

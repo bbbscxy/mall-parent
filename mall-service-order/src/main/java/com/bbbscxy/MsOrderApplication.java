@@ -1,6 +1,5 @@
 package com.bbbscxy;
 
-import com.alibaba.nacos.spring.context.annotation.config.NacosPropertySource;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,10 +12,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 @MapperScan(basePackages = {"com.bbbscxy.modules.mapper"})
-@NacosPropertySource(dataId = "${spring.application.name}", autoRefreshed = true)
-public class MsGoodsApplication {
+public class MsOrderApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MsGoodsApplication.class, args);
+        SpringApplication.run(MsOrderApplication.class, args);
     }
 }

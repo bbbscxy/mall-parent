@@ -16,6 +16,10 @@
         <mall.api.order.version>1.0-SNAPSHOT</mall.api.order.version>
         <mall.api.store.version>1.0-SNAPSHOT</mall.api.store.version>
         <mall.api.member.version>1.0-SNAPSHOT</mall.api.member.version>
+
+        <dubbo.spring.boot.starter.version>2.7.8</dubbo.spring.boot.starter.version>
+        <nacos.spring.boot.version>2.7.8</nacos.spring.boot.version>
+        <nacos.config.spring.boot.version>0.2.7</nacos.config.spring.boot.version>
     </properties>
 
     <dependencies>
@@ -57,6 +61,11 @@
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
             <version>${dubbo.spring.boot.starter.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-registry-nacos</artifactId>
+            <version>${nacos.spring.boot.version}</version>
         </dependency>
     </dependencies>
 </project>
