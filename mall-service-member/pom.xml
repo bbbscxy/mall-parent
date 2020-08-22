@@ -8,11 +8,11 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>mall-service-goods</artifactId>
+    <artifactId>mall-service-member</artifactId>
 
     <properties>
         <mall.service.common.version>1.0-SNAPSHOT</mall.service.common.version>
-        <mall.api.goods.version>1.0-SNAPSHOT</mall.api.goods.version>
+        <mall.api.member.version>1.0-SNAPSHOT</mall.api.member.version>
     </properties>
 
     <dependencies>
@@ -23,8 +23,8 @@
         </dependency>
         <dependency>
             <groupId>com.bbbscxy</groupId>
-            <artifactId>mall-api-goods</artifactId>
-            <version>${mall.api.goods.version}</version>
+            <artifactId>mall-api-member</artifactId>
+            <version>${mall.api.member.version}</version>
         </dependency>
     </dependencies>
 </project>

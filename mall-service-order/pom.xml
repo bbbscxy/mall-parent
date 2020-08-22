@@ -10,4 +10,21 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>mall-service-order</artifactId>
 
+    <properties>
+        <mall.service.common.version>1.0-SNAPSHOT</mall.service.common.version>
+        <mall.api.order.version>1.0-SNAPSHOT</mall.api.order.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.bbbscxy</groupId>
+            <artifactId>mall-service-common</artifactId>
+            <version>${mall.service.common.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.bbbscxy</groupId>
+            <artifactId>mall-api-order</artifactId>
+            <version>${mall.api.order.version}</version>
+        </dependency>
+    </dependencies>
 </project>

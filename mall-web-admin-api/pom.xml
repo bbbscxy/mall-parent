@@ -13,6 +13,9 @@
     <properties>
         <mall.common.version>1.0-SNAPSHOT</mall.common.version>
         <mall.api.goods.version>1.0-SNAPSHOT</mall.api.goods.version>
+        <mall.api.order.version>1.0-SNAPSHOT</mall.api.order.version>
+        <mall.api.store.version>1.0-SNAPSHOT</mall.api.store.version>
+        <mall.api.member.version>1.0-SNAPSHOT</mall.api.member.version>
     </properties>
 
     <dependencies>
@@ -32,6 +35,21 @@
             <groupId>com.bbbscxy</groupId>
             <artifactId>mall-api-goods</artifactId>
             <version>${mall.api.goods.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.bbbscxy</groupId>
+            <artifactId>mall-api-order</artifactId>
+            <version>${mall.api.order.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.bbbscxy</groupId>
+            <artifactId>mall-api-store</artifactId>
+            <version>${mall.api.store.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.bbbscxy</groupId>
+            <artifactId>mall-api-member</artifactId>
+            <version>${mall.api.member.version}</version>
         </dependency>
 
         <!-- dubbo -->

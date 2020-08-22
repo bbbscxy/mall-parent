@@ -12,17 +12,16 @@
         <module>mall-common</module>
 
         <module>mall-api-common</module>
-        <module>mall-api-user</module>
+        <module>mall-api-member</module>
         <module>mall-api-goods</module>
         <module>mall-api-order</module>
         <module>mall-api-store</module>
 
         <module>mall-service-common</module>
-        <module>mall-service-user</module>
+        <module>mall-service-member</module>
         <module>mall-service-goods</module>
         <module>mall-service-order</module>
         <module>mall-service-store</module>
-        <module>mall-service-resource</module>
 
         <module>mall-web-admin-api</module>
         <module>mall-web-front-api</module>
