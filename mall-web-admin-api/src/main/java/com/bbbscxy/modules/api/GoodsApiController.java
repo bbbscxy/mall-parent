@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GoodsApiController {
 
-    @DubboReference(url = "dubbo://127.0.0.1:19001")
+    @DubboReference(url = "${dubbo.reference.url}")
     private MallGoodsService mallGoodsService;
 
     @RequestMapping("goodsInfo/{id}")
