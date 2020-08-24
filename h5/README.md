@@ -1,6 +1,6 @@
 #### 1、安装nvm
-+ arch: 64
-  node_mirror: https://npm.taobao.org/mirrors/node/
++ arch: 64  
+  node_mirror: https://npm.taobao.org/mirrors/node/  
   npm_mirror: https://npm.taobao.org/mirrors/npm/
 + nvm install 12.18.3
 + 注意事项：安装目录不能有空格
@@ -11,3 +11,4 @@
 
 #### 3、新建项目
 + vue init webpack mall
++ 初始化失败：npm install
