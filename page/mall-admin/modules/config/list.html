@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>配置管理</title>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../static/adminLTE/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../../static/adminLTE/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="../../static/plugins/daterangepicker/daterangepicker-bs3.css">
+    <link rel="stylesheet" href="../../static/plugins/bootstrap-table/bootstrap-table.min.css" />
+    <link rel="stylesheet" href="../../static/plugins/json-viewer/css/jquery.json-viewer.css" />
+    <link rel="stylesheet" href="../../static/plugins/ztree/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="../../static/plugins/ztree/css/metroStyle/metroStyle.css" type="text/css">
+    <link rel="stylesheet" href="../../static/plugins/select2/select2.min.css" type="text/css">
+    <link rel="stylesheet" href="../../static/plugins/jQueryUI/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="../../static/plugins/jQueryUI/jquery-ui.theme.min.css" type="text/css">
+    <link rel="stylesheet" href="../../static/plugins/bootstrap-jqgrid/css/ui.jqgrid.css" type="text/css">
+    <link rel="stylesheet" href="../../static/plugins/icheck/skins/all.css" type="text/css">
+    <link rel="stylesheet" href="../../static/plugins/crop-avatar/cropper.min.css" type="text/css">
+    <link rel="stylesheet" href="../../static/common/css/common.css" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="../../static/plugins/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script type="text/javascript" src="../../static/plugins/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="wrapper">
+    <div class="main-content">
+        <div class="box box-main">
+            <div class="box-header">
+                <div class="box-title"><i class="fa fa-gg"></i>配置管理</div>
+                <div class="box-tools pull-right">
+                    <a href="javascript:void(0);" onclick="tableDialog(this)" class="btn btn-default" data-height="500" data-type="form" data-title="新增配置" data-href="form.html"><i class="fa fa-plus"></i> 新增</a>
+                </div>
+            </div>
+            <div class="box-body">
+                <form id="searchForm" action="/sysConfig/dataList" class="form-inline" onsubmit="return search();">
+                    <div class="form-group">
+                        <label class="control-label">配置标识：</label>
+                        <div class="control-inline">
+                            <input type="text" name="code" value="" maxlength="100" class="form-control width-120" autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">配置名称：</label>
+                        <div class="control-inline">
+                            <input type="text" name="name" value="" maxlength="100" class="form-control width-120" autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-sm">查询</button>
+                        <button type="reset" class="btn btn-default btn-sm">重置</button>
+                    </div>
+                </form>
+                <table id="datatable" class="table table-hover table-striped table-bordered"></table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../static/plugins/jQuery/jQuery-2.2.0.min.js"></script>
+<script type="text/javascript" src="../../static/plugins/jquery-migrate/jquery-migrate-1.3.0.min.js"></script>
+<script type="text/javascript" src="../../static/plugins/jQueryUI/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../../static/plugins/jquery-layout/jquery.layout-latest.js"></script>
+<script type="text/javascript" src="../../static/plugins/jQuery/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="../../static/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../static/plugins/moment/2.11.2/moment.min.js"></script>
+<script type="text/javascript" src="../../static/plugins/daterangepicker/daterangepicker.js"></script>
+<script type="text/javascript" src="../../static/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script type="text/javascript" src="../../static/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script type="text/javascript" src="../../static/plugins/bootstrap-table/bootstrap-table-locale-all.min.js"></script>
+<script type="text/javascript" src="../../static/plugins/jquery-validate/jquery.validate.min.js" ></script>
+<script type="text/javascript" src="../../static/plugins/jquery-validate/additional-methods.min.js" ></script>
+<script type="text/javascript" src="../../static/plugins/jquery-validate/localization/messages_zh.min.js" ></script>
+<script type="text/javascript" src="../../static/plugins/layer/layer.js" ></script>
+<script type="text/javascript" src="../../static/plugins/json-viewer/js/jquery.json-viewer.js" ></script>
+<script type="text/javascript" src="../../static/plugins/ztree/js/jquery.ztree.all.min.js"></script>
+<script type="text/javascript" src="../../static/plugins/select2/select2.full.min.js"></script>
+<script type="text/javascript" src="../../static/plugins/bootstrap-jqgrid/js/jquery.jqGrid.min.js"></script>
+<script type="text/javascript" src="../../static/plugins/bootstrap-jqgrid/js/i18n/grid.locale-cn.js"></script>
+<script type="text/javascript" src="../../static/plugins/icheck/icheck.min.js"></script>
+<script type="text/javascript" src="../../static/plugins/crop-avatar/cropper.min.js"></script>
+<script type="text/javascript" src="../../static/adminLTE/js/app.min.js"></script>
+<script type="text/javascript" src="../../static/adminLTE/js/theme-skins.js"></script>
+<script type="text/javascript" src="../../static/common/js/dialog.js"></script>
+<script type="text/javascript" src="../../static/common/js/common.js"></script>
+<script type="text/javascript" src="../../static/plugins/websocket/socket.js"></script>
+
+<script type="text/javascript" src="../../static/common/js/pagelist.js"></script>
+<script>
+$(function () {
+    $("#datatable").datatable([
+        {
+            field: "code", title: "配置标识", width: "300",
+            formatter: function (value, row, index) {
+                return '<span class="primary">'+value+'</span>';
+            }
+        },
+        {
+            field: "name", title: "配置名称", width: "200" ,
+        },
+        { field: "value", title: "配置值", align: "left", width: "400" },
+        { field: "updateDate", title: "更新时间", align: "center", width: "200" },
+        {
+            title: "操作", align: "center", width: "100",
+            formatter: function (value, row, index) {
+                var str = "";
+                    str += '<a class="list-btn" href="javascript:void(0);" onclick="tableDialog(this)" data-height="500" data-type="form" data-title="修改配置" data-href="/sysConfig/form?id='+row.id+'"><i class="fa fa-pencil"></i></a>';
+                    str += '<a class="list-btn" href="javascript:void(0);" onclick="tableDialog(this)" data-type="confirm" data-title="确认删除配置吗" data-href="/sysConfig/delete?id='+row.id+'"><i class="fa fa-trash-o"></i></a>';
+                if(str == ""){ str = "-"; }
+                return str;
+            }
+        },
+    ])
+})
+</script>
+</html>

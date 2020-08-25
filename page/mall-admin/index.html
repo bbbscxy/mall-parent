@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>通用项目模板</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/adminLTE/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="static/adminLTE/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="static/plugins/daterangepicker/daterangepicker-bs3.css">
+    <link rel="stylesheet" href="static/plugins/bootstrap-table/bootstrap-table.min.css" />
+    <link rel="stylesheet" href="static/plugins/json-viewer/css/jquery.json-viewer.css" />
+    <link rel="stylesheet" href="static/plugins/ztree/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="static/plugins/ztree/css/metroStyle/metroStyle.css" type="text/css">
+    <link rel="stylesheet" href="static/plugins/select2/select2.min.css" type="text/css">
+    <link rel="stylesheet" href="static/plugins/jQueryUI/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="static/plugins/jQueryUI/jquery-ui.theme.min.css" type="text/css">
+    <link rel="stylesheet" href="static/plugins/bootstrap-jqgrid/css/ui.jqgrid.css" type="text/css">
+    <link rel="stylesheet" href="static/plugins/icheck/skins/all.css" type="text/css">
+    <link rel="stylesheet" href="static/plugins/crop-avatar/cropper.min.css" type="text/css">
+    <link rel="stylesheet" href="static/common/css/common.css" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="static/plugins/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script type="text/javascript" src="static/plugins/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .slimScrollDiv{
+            height: 170px !important;
+        }
+        .topNav{
+            color:#fff;
+            float: left;
+            padding: 15px;
+        }
+        .rightNav{
+            color:#fff;
+            float: right;
+            padding: 15px;
+        }
+        .topNav:hover, .topNav:focus, .topNav.active{
+            color: #fff;
+            background: #367fa9;
+        }
+    </style>
+    <script>
+        function changeFrameHeight(){
+            var ifm= document.getElementById("iframepage");
+            ifm.height=document.documentElement.clientHeight-55;
+        }
+        //注销
+        function logoutCallback() {
+            window.location.href = "/";
+        }
+    </script>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+    <header class="main-header">
+        <a href="/" class="logo">
+            <span class="logo-mini">通用项目框架</span>
+            <span class="logo-lg">通用项目框架</span>
+        </a>
+
+        <nav class="navbar navbar-static-top">
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
+            <a href="javascript:void(0)" data-id="1" class="topNav">导航1</a>
+            <a href="javascript:void(0)" data-id="2" class="topNav">导航2</a>
+            <a href="javascript:void(0)" data-id="3" class="topNav">导航3</a>
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <li>
+                      <span class="rightNav">
+                          当前在线人数：&nbsp;<span id="onlineCount"></span>
+                      </span>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" onclick="dialog(this)" data-title="消息通知" data-type="show" data-href="/sysUserMsg/list">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="label label-warning">
+                                <span class="msgCount">10</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="static/common/img/user.jpg" class="user-image"><span class="hidden-xs">用户名称</span>
+                        </a>
+                        <ul class="dropdown-menu" style="width: 160px;">
+                            <li style="padding-top: 10px;"><a href="javascript:void(0)" onclick="dialog(this)" data-title="更换头像" data-type="form" data-href="/sysUser/updateAvatarForm"><i class="fa fa-user-o"></i>更换头像</a></li>
+                            <li class="divider"></li>
+                            <li><a href="javascript:void(0)" onclick="dialog(this)" data-title="修改密码" data-type="form" data-href="/sysUser/updatePasswordForm"><i class="fa fa-key"></i>修改密码</a></li>
+                            <li class="divider"></li>
+                            <li style="padding-bottom: 10px;"><a href="javascript:void(0)" onclick="dialog(this, logoutCallback);" data-title="确认退出当前用户？" data-type="confirm" data-href="/logout"><i class="fa fa-sign-out"></i>注销</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <aside class="main-sidebar">
+        <section class="sidebar">
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="static/common/img/user.jpg" class="img-circle" alt="User Image">
+                </div>
+                <div class="pull-left info">
+                    <p>用户姓名</p>
+                    <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
+                </div>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active treeview">
+                    <a href="#">
+                        <i class="fa fa-desktop"></i>
+                        <span>菜单1</span> <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="modules/config/list.html" target="right">
+                                <i class="fa fa-square-o"></i>子菜单1
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </aside>
+
+    <div class="content-wrapper">
+        <iframe src="/desktop" id="iframepage" name="right" frameBorder=0 scrolling="auto" width="100%" onLoad="changeFrameHeight()"></iframe>
+    </div>
+
+    <aside class="control-sidebar control-sidebar-dark">
+        <div class="skin-top"></div>
+        <div id="switchSkin"></div>
+    </aside>
+    <div class="control-sidebar-bg"></div>
+</div>
+</body>
+<script type="text/javascript" src="static/plugins/jQuery/jQuery-2.2.0.min.js"></script>
+<script type="text/javascript" src="static/plugins/jquery-migrate/jquery-migrate-1.3.0.min.js"></script>
+<script type="text/javascript" src="static/plugins/jQueryUI/jquery-ui.min.js"></script>
+<script type="text/javascript" src="static/plugins/jquery-layout/jquery.layout-latest.js"></script>
+<script type="text/javascript" src="static/plugins/jQuery/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="static/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="static/plugins/moment/2.11.2/moment.min.js"></script>
+<script type="text/javascript" src="static/plugins/daterangepicker/daterangepicker.js"></script>
+<script type="text/javascript" src="static/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script type="text/javascript" src="static/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script type="text/javascript" src="static/plugins/bootstrap-table/bootstrap-table-locale-all.min.js"></script>
+<script type="text/javascript" src="static/plugins/jquery-validate/jquery.validate.min.js" ></script>
+<script type="text/javascript" src="static/plugins/jquery-validate/additional-methods.min.js" ></script>
+<script type="text/javascript" src="static/plugins/jquery-validate/localization/messages_zh.min.js" ></script>
+<script type="text/javascript" src="static/plugins/layer/layer.js" ></script>
+<script type="text/javascript" src="static/plugins/json-viewer/js/jquery.json-viewer.js" ></script>
+<script type="text/javascript" src="static/plugins/ztree/js/jquery.ztree.all.min.js"></script>
+<script type="text/javascript" src="static/plugins/select2/select2.full.min.js"></script>
+<script type="text/javascript" src="static/plugins/bootstrap-jqgrid/js/jquery.jqGrid.min.js"></script>
+<script type="text/javascript" src="static/plugins/bootstrap-jqgrid/js/i18n/grid.locale-cn.js"></script>
+<script type="text/javascript" src="static/plugins/icheck/icheck.min.js"></script>
+<script type="text/javascript" src="static/plugins/crop-avatar/cropper.min.js"></script>
+<script type="text/javascript" src="static/adminLTE/js/app.min.js"></script>
+<script type="text/javascript" src="static/adminLTE/js/theme-skins.js"></script>
+<script type="text/javascript" src="static/common/js/dialog.js"></script>
+<script type="text/javascript" src="static/common/js/common.js"></script>
+<script type="text/javascript" src="static/plugins/websocket/socket.js"></script>
+<script>
+    window.onresize=function(){
+        changeFrameHeight();
+    }
+
+    $(function () {
+        //头部菜单事件
+        $(".topNav").click(function () {
+            $.cookie('topId', $(this).attr("data-id"), -1);
+            window.location.href = '/';
+        })
+
+        //左侧菜单事件
+        $(".treeview-menu li").click(function () {
+            $(this).addClass("active");
+            $(this).siblings().removeClass("active");
+        })
+
+        //获取选中菜单
+        var topId = $.cookie('topId');
+        $(".topNav").each(function () {
+            if($(this).attr("data-id") == topId){
+                $(this).addClass("active");
+            }else{
+                $(this).removeClass("active");
+            }
+        })
+
+        var IframeOnClick = {
+            resolution: 200,
+            iframes: [],
+            interval: null,
+            Iframe: function() {
+                this.element = arguments[0];
+                this.cb = arguments[1];
+                this.hasTracked = false;
+            },
+            track: function(element, cb) {
+                this.iframes.push(new this.Iframe(element, cb));
+                if (!this.interval) {
+                    var _this = this;
+                    this.interval = setInterval(function() { _this.checkClick(); }, this.resolution);
+                }
+            },
+            checkClick: function() {
+                if (document.activeElement) {
+                    var activeElement = document.activeElement;
+                    for (var i in this.iframes) {
+                        if (activeElement === this.iframes[i].element) { // user is in this Iframe
+                            if (this.iframes[i].hasTracked == false) {
+                                this.iframes[i].cb.apply(window, []);
+                                this.iframes[i].hasTracked = true;
+                            }
+                        } else {
+                            this.iframes[i].hasTracked = false;
+                        }
+                    }
+                }
+            }
+        };
+
+        //iframe点击事件
+        IframeOnClick.track(document.getElementById("iframepage"), function() {
+            $(".dropdown").removeClass('open');
+            $("aside").removeClass('control-sidebar-open');
+        });
+    })
+</script>
+</html>
