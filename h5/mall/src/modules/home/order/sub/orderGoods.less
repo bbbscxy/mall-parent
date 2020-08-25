@@ -1,0 +1,49 @@
+.order_goods_container{
+    padding: 0.3rem;
+    .order_goods{
+        .order_goods_item{
+            display: flex;
+            height: 2rem;
+            width: 100%;
+            border-bottom: 1px solid #e5e5e5;
+            .left{
+                margin-top: 0.25rem;                
+                height: 1.5rem;
+                width: 1.5rem;
+                img{
+                    display: block;
+                    height: 1.5rem;
+                    width: 1.5rem;
+                }
+            }
+            .right{
+                display: flex;
+                flex-direction: column;
+                margin-top: 0.25rem; 
+                height: 1.5rem;
+                margin-left: 0.2rem;
+                flex: 1;
+                .top{
+                    height: 1rem;
+                    font-size: 0.28rem;
+                    color: #333;
+                }
+                .bottom{
+                    display: flex;
+                    justify-content: space-between;
+                    height: 0.5rem;
+                    line-height: 0.5rem;
+                    .price{
+                        color: #e93b3d;
+                    }
+                    .num{
+                        color: #333;
+                    }
+                }
+            }
+        }
+        .order_goods_item:last-child{
+            border-bottom: none;
+        }
+    }
+}

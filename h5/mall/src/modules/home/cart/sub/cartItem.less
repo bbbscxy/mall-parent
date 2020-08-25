@@ -1,0 +1,85 @@
+.cartItemBox{
+    padding: 0 0.3rem 0 0.2rem;
+    margin: 0.2rem 0;
+    border-bottom: 1px solid #ddd;
+    .cartItem{
+        align-items: center;
+        .left{
+            width: 0.5rem;
+            height: 0.5rem;
+            img{
+                margin: 0;
+                position: relative;
+                top: -0.15rem;
+            }
+        }
+        .content{
+            padding-top: 0 !important;
+            display: flex;
+            .list_item_img{
+                width: 1.2rem;
+                height: 1.2rem;
+                margin-right: 0.2rem;
+                img{
+                    width: 1.2rem;
+                    height: 1.2rem;
+                }
+            }
+            .list_item_info{
+                display: flex;
+                flex-direction: column;
+                height: 1.6rem;
+                .name{
+                    height: 0.8rem;
+                    line-height: 0.4rem;
+                    color: #333;
+                    font-size: 0.28rem;
+                    word-break:break-all;
+                    overflow:hidden;
+                    text-overflow:ellipsis;
+                    text-align: justify;
+                }
+                .list_item_info_other{
+                    height: 0.8rem;
+                    display: flex;
+                    align-items: center;
+                    .price{
+                        flex: 1;
+                        color: #e4393c;
+                    }
+                }
+            }
+        }
+    } 
+}
+
+.am-stepper.showNumber{
+    width: 1.5rem;
+}
+.am-stepper{
+    height: 0.4rem;
+    line-height: 0.4rem;
+    font-size: 0.28rem;
+    padding: 0.05rem 0;
+}
+.am-stepper-handler{
+    border-radius: 0.1rem;
+    border: 1px solid #ddd;
+}
+.am-icon-xxs{
+    height: 0.25rem;
+    width: 0.25rem;
+    vertical-align: top;
+    margin-top: 0.07rem;
+}
+.am-stepper-handler, .am-stepper-handler-up-inner, .am-stepper-handler-down-inner{
+    height: 0.4rem;
+    width: 0.4rem;
+}
+.am-stepper-input-wrap{
+    height: 0.4rem;
+    line-height: 0.4rem;
+}
+.am-stepper-input{
+    font-size: 0.28rem;
+}
