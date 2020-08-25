@@ -1,7 +1,6 @@
 /**
  * Created by Administrator on 2019/7/22.
  */
-
 //弹窗
 function dialog(_this, callback){
     var type = $(_this).attr("data-type");
@@ -77,14 +76,14 @@ function tableDialog(_this){
         }else{
             height = '600px';
         }
-        layer.open({
+        window.parent.layer.open({
             type: 2,
             title: title,
             shadeClose: false,
             offset: '100px',
             shade: 0.3,
             area: [width, height],
-            content: "http://www.baidu.com",
+            content: href,
             btn: ['保存', '关闭'],
             yes: function(index, layero){
                 var iframeWin = window.frames.parent[layero.find('iframe')[0]['name']]
@@ -104,7 +103,7 @@ function tableDialog(_this){
         }else{
             height = '600px';
         }
-        layer.open({
+        window.parent.layer.open({
             type: 2,
             title: title,
             shadeClose: true,
@@ -115,7 +114,7 @@ function tableDialog(_this){
         });
     }
     if("confirm" == type){
-        layer.confirm(title,{
+        window.parent.layer.confirm(title,{
             offset: '200px',
             btn: ['确认','取消']
         }, function(){
