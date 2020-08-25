@@ -1,12 +1,7 @@
 {
-  "presets": [
-    ["env", {
-      "modules": false,
-      "targets": {
-        "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
-      }
-    }],
-    "stage-2"
-  ],
-  "plugins": ["transform-vue-jsx", "transform-runtime"]
+  "presets": ["es2015", "react", "stage-0"],
+  "plugins": [
+    "transform-decorators-legacy",
+    "add-module-exports", ["import", { "style": "css", "libraryName": "antd-mobile" }]
+  ]
 }
