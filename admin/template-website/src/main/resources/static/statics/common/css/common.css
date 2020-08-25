@@ -1,0 +1,416 @@
+::-webkit-scrollbar{width:4px;height: 4px;}
+::-webkit-scrollbar-track{background-color:#ccc;}
+::-webkit-scrollbar-thumb{background-color:#3c8dbc;}
+::-webkit-scrollbar-thumb:hover {background-color:#3c8dbc}
+::-webkit-scrollbar-thumb:active {background-color:#3c8dbc}
+.main-sidebar, .left-side, .main-header .logo{
+    width: 180px;
+}
+.content-wrapper, .right-side, .main-footer, .main-header>.navbar {
+    margin-left: 180px;
+}
+
+pre{
+    background: #fff;
+}
+i.fa-plus{
+    color: #1890ff;
+}
+i.fa-pencil{
+    color: #69aa46;
+}
+i.fa-trash-o{
+    color: #dd5a43;
+}
+.box-tools i.fa-plus{
+    color: #444;
+}
+.dropdown-menu{
+    border-color: #ddd;
+}
+.primary{
+    color: #3c8dbc;
+}
+.skin-top{
+    height: 15px;
+}
+/* table */
+.ui-jqgrid .ui-jqgrid-btable{
+    table-layout:inherit;
+}
+.bootstrap-table{
+    margin-left: 5px;
+}
+.bootstrap-table th{
+    font-weight: normal !important;
+}
+.bootstrap-table td{
+    font-size: 14px;
+}
+.table thead tr, .ui-jqgrid-htable thead tr, .ui-jqgrid-hdiv, .ui-jqgrid-hbox{
+    background-color: #f4f4f4;
+}
+.bootstrap-table .fixed-table-container.fixed-height .table thead th{
+    border-bottom: 1px solid #eee;
+}
+.table-bordered td, .table-bordered th{
+    border: 1px solid #e8e8e8 !important;
+}
+.loading-text{
+    font-size: 14px !important;
+}
+.treegrid-expander{
+    color: #3c8dbc !important;
+}
+.list-btn{
+    margin-right: 15px;
+}
+.list-btn:last-child{
+    margin-right: 0px;
+}
+.bootstrap-table .page-list{
+    display: none !important;
+}
+
+/* layer */
+.layui-layer-btn .layui-layer-btn0{
+    border-color: #367fa9 !important;
+    background-color: #367fa9 !important;
+    color: #fff !important;
+}
+
+/* 左侧菜单栏二级菜单缩进 */
+.sidebar-menu .treeview-menu>li>a{
+    padding: 5px 5px 5px 36px !important;
+}
+
+.btn-default:hover, .btn-default:active, .btn-default:after{
+    background: #fff;
+}
+
+/* form */
+.select2-selection{
+    min-height: 30px;
+}
+.select2-container .select2-dropdown{
+    border: 1px solid #d2d6de;
+}
+.select2-container .select2-selection--single .select2-selection__rendered{
+    margin-top: -6px;
+}
+.select2-container--default .select2-results__option--highlighted[aria-selected]{
+    background-color: #367fa9;
+}
+.select2-container--default .select2-selection--single, .select2-selection .select2-selection--single{
+    padding: 6px 0px;
+    border: 1px solid #d2d6de;
+}
+.form-horizontal .checkbox, .form-horizontal .checkbox-inline, .form-horizontal .radio, .form-horizontal .radio-inline{
+    padding-top: 3px !important;
+}
+.input-group-addon, .input-group-btn{
+    vertical-align: top !important;
+}
+form .error{
+    color: red;
+}
+input, textarea{
+    border-radius: 5px !important;
+}
+.input-group-btn+input{
+    border-radius: 0px !important;
+}
+.form-horizontal .row {
+    margin: 0 55px 0 -15px
+}
+
+@media(max-width:767px) {
+    .form-horizontal .row {
+        margin: 0
+    }
+}
+
+.form-unit {
+    font-size: 15px;
+    color: #6379bb;
+    border-bottom: 1px solid #ddd;
+    margin: 8px 10px 25px 10px;
+    padding-bottom: 5px
+}
+
+.form-group .control-label {
+    font-weight: normal;
+    padding-top: 3px;
+    text-align: right;
+    padding-right: 0
+}
+
+.form-group .control-label .required {
+    color: #e02222
+}
+
+.form-group .control-label i {
+    vertical-align: baseline;
+}
+
+.form-group .control-text {
+    padding-top: 4px
+}
+
+.form-group.has-error .input-group-btn .btn {
+    border-color: #dd4b39
+}
+
+label.has-error {
+    top: auto;
+    left: 15px;
+    padding: 0 5px 1px;
+    font-size: 11px;
+    color: #fff!important;
+    max-width: none;
+    position: absolute;
+    background: #ff6969;
+    z-index: 1000;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 5px 10px #dedede;
+    box-shadow: 0 5px 10px #dedede
+}
+
+label.has-error:after {
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #ff6969;
+    border-style: solid;
+    border-width: 6px;
+    content: "";
+    height: 0;
+    left: 15px;
+    position: absolute;
+    top: -11px
+}
+
+.form-error {
+    float: right;
+    padding-top: 5px;
+    color: #a94442;
+    display: none
+}
+
+.form-control {
+    padding: 3px 6px 4px;
+    height: 30px;
+    font-size: 14px
+}
+
+select.form-control {
+    padding: 0 6px
+}
+
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+    background-color: #f3f3f3
+}
+.input-group-btn .btn {
+    height: 30px;
+    padding: 3px 10px 4px 10px;
+    border-color: #caced6
+}
+
+.input-group-btn .btn.btn-sm {
+    padding: 4px 3px 3px 3px
+}
+.icheck label {
+    height: 30px;
+    line-height: 23px;
+    margin: 0;
+    padding: 2px 8px 0 0;
+    font-size: 13px;
+    font-weight: 400;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.icheck label input {
+    height: 18px;
+    width: 18px;
+    display: inline-block;
+    margin: -4px 2px 0 0;
+    vertical-align: middle
+}
+
+.icheck label div {
+    margin-top: -3px;
+    margin-right: 6px
+}
+
+.input-group-addon {
+    padding: 5px 6px 4px 6px
+}
+
+.form-inline {
+    padding-left: 5px;
+    margin: 3px
+}
+
+.form-inline .form-group {
+    display: inline-block;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    margin-right: 6px
+}
+
+.form-inline .control-label {
+    text-align: right;
+    font-size: 13px;
+    vertical-align: baseline
+}
+
+.form-inline .control-inline {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle
+}
+
+.form-inline .form-control {
+    display: inline-block;
+    vertical-align: middle
+}
+
+.form-inline .btn {
+    margin-right: 3px
+}
+
+.form-inline .input-group-btn .btn {
+    margin-right: 0
+}
+
+.main-content {
+    margin: 0;
+    padding: 0;
+    border-radius: 0
+}
+
+.box-main {
+    margin: 0;
+    border: 0;
+    padding-top: 2px;
+    border-radius: 0;
+    box-shadow: none
+}
+
+.box-main>.box-header {
+    border-bottom: 1px solid #eee;
+    padding: 13px 10px 1px 15px
+}
+
+.box-main>.box-header .box-title {
+    font-size: 15px;
+    margin-bottom: 13px;
+    float: left
+}
+
+.box-main>.box-header .box-title .fa {
+    position: relative;
+    top: -1px;
+    font-size: 14px;
+    margin-right: 8px;
+    margin-top: -2px
+}
+
+.box-main>.box-header .box-tools {
+    right: 10px;
+}
+.box-main>.box-header .box-tools .btn {
+    padding: 5px 10px 5px 10px;
+    font-size: 14px;
+}
+.box-main>.box-header .box-tools .btn i{
+    margin-right: 3px;
+}
+.box-main>.box-header .box-tools .btn-box-tool {
+    padding: 4px 2px
+}
+
+.box-main form>.box-footer,
+.nav-main form>.box-footer {
+    background: #fafafa
+}
+
+.box-main form>.box-footer .row,
+.nav-main form>.box-footer .row {
+    margin: 5px 0 5px -25px
+}
+
+.form-inline,
+.form-horizontal {
+    animation-duration: .2s;
+    animation-name: fadeInDown
+}
+
+/*daterangepicker*/
+.daterangepicker .daterangepicker_start_input, .daterangepicker_end_input{
+    display: none;
+}
+.daterangepicker .range_inputs{
+    width: 160px;
+}
+.daterangepicker .range_inputs .cancelBtn{
+    float: right;
+}
+.daterangepicker .ranges ul{
+    height: 223px;
+    overflow-y: auto;
+}
+.daterangepicker select.monthselect, .daterangepicker select.yearselect{
+    vertical-align: bottom;
+    border-radius: 3px
+}
+
+/*jqgrid*/
+.ui-jqgrid {
+    border-radius: 3px;
+}
+.ui-jqgrid tr.jqgrow td,.ui-jqgrid .ui-jqgrid-htable th{
+    height: 37px;
+    line-height: 37px;
+    font-size: 14px;
+}
+.ui-jqgrid .ui-jqgrid-htable th div{
+    height: 37px;
+}
+.ui-state-default{
+    border:none;
+}
+.ui-jqgrid .tree-wrap-ltr{
+    margin-top: 12px;
+}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
+    background: #fff;
+    color: #333;
+}
+.ui-state-default.ui-jqgrid-hdiv{
+    border:none;
+}
+.ui-jqgrid.ui-widget{
+    border: 1px solid #e8e8e8;
+}
+.ui-jqgrid .loading{
+    padding: 10px;
+}
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover{
+    border: 1px solid #eee;
+    background: #fff;
+    font-weight: normal;
+    color: #666;
+}
+.ui-widget-content a{
+    color: #3c8dbc;
+}
+.ui-widget-content a:hover, .ui-widget-content a:active, .ui-widget-content a:focus{
+    color: #72afd2;
+}
+.ui-state-highlight a, .ui-widget-content .ui-state-highlight a, .ui-widget-header .ui-state-highlight a{
+    color: #3c8dbc;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+    border: 1px solid #e8e8e8;
+}

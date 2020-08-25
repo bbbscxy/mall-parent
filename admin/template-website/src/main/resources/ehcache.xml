@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="ehcache.xsd">
+    <diskStore path="@ehcache.dir@"/>
+    <!--
+    name: 缓存名称
+    overflowToDisk: 如果内存中数据超过内存限制，是否要缓存到磁盘上
+    maxElementsInMemory: 内存中缓存数量的上限
+    maxElementsOnDisk:   磁盘上缓存数量的上限
+    eternal: 代表对象是否永不过期
+    timeToIdleSeconds: 对象空闲时间，指对象在多长时间没有被访问就会失效
+    timeToLiveSeconds: 对象存活时间，指对象从创建到失效所需要的时间
+    diskPersistent: 是否在磁盘上持久化，指重启jvm后，数据是否有效，默认为false
+    diskExpiryThreadIntervalSeconds: 对象检测线程运行时间间隔，标识对象状态的线程多长时间运行一次
+    memoryStoreEvictionPolicy: 存中数据超过内存限制，向磁盘缓存时的策略，默认值LRU
+    -->
+    <defaultCache
+           overflowToDisk="true"
+           maxElementsInMemory="10000"
+           maxElementsOnDisk="10000000"
+
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="3600"
+
+           diskPersistent="false"
+           diskExpiryThreadIntervalSeconds="120"
+
+           memoryStoreEvictionPolicy="LRU">
+    </defaultCache>
+
+    <cache name="user"
+           overflowToDisk="true"
+           maxElementsInMemory="10000"
+           maxElementsOnDisk="10000000"
+
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="3600"
+
+           diskPersistent="false"
+           diskExpiryThreadIntervalSeconds="120"
+
+           memoryStoreEvictionPolicy="LRU">
+    </cache>
+
+    <cache name="config"
+           overflowToDisk="true"
+           maxElementsInMemory="10000"
+           maxElementsOnDisk="10000000"
+
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="3600"
+
+           diskPersistent="false"
+           diskExpiryThreadIntervalSeconds="120"
+
+           memoryStoreEvictionPolicy="LRU">
+    </cache>
+
+    <cache name="dict"
+           overflowToDisk="true"
+           maxElementsInMemory="10000"
+           maxElementsOnDisk="10000000"
+
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="3600"
+
+           diskPersistent="false"
+           diskExpiryThreadIntervalSeconds="120"
+
+           memoryStoreEvictionPolicy="LRU">
+    </cache>
+
+    <cache name="menu"
+           overflowToDisk="true"
+           maxElementsInMemory="10000"
+           maxElementsOnDisk="10000000"
+
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="3600"
+
+           diskPersistent="false"
+           diskExpiryThreadIntervalSeconds="120"
+
+           memoryStoreEvictionPolicy="LRU">
+    </cache>
+</ehcache>

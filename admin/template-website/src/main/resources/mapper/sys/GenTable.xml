@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vim.modules.sys.dao.GenTableDao">
+
+    <resultMap id="baseResultMap" type="GenTable">
+        <id property="id" column="id" />
+        <result property="name" column="name" />
+        <result property="comments" column="comments" />
+        <result property="createBy" column="create_by" />
+        <result property="createDate" column="create_date" />
+        <result property="updateBy" column="update_by" />
+        <result property="updateDate" column="update_date" />
+        <result property="remarks" column="remarks" />
+        <result property="delFlag" column="del_flag" />
+    </resultMap>
+
+    <sql id="baseColumns">
+        a.id,
+        a.name,
+        a.comments,
+        a.create_by,
+        a.create_date,
+        a.update_by,
+        a.update_date,
+        a.remarks,
+        a.del_flag
+    </sql>
+
+    <insert id="save" parameterType="GenTable">
+        insert into gen_table
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null and id != ''">
+                id,
+            </if>
+            <if test="name != null and name != ''">
+                name,
+            </if>
+            <if test="comments != null and comments != ''">
+                comments,
+            </if>
+            <if test="createBy != null and createBy != ''">
+                create_by,
+            </if>
+            <if test="createDate != null">
+                create_date,
+            </if>
+            <if test="updateBy != null and updateBy != ''">
+                update_by,
+            </if>
+            <if test="updateDate != null">
+                update_date,
+            </if>
+            <if test="remarks != null and remarks != ''">
+                remarks,
+            </if>
+            <if test="delFlag != null and delFlag != ''">
+                del_flag,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null and id != ''">
+                #{id},
+            </if>
+            <if test="name != null and name != ''">
+                #{name},
+            </if>
+            <if test="comments != null and comments != ''">
+                #{comments},
+            </if>
+            <if test="createBy != null and createBy != ''">
+                #{createBy},
+            </if>
+            <if test="createDate != null">
+                #{createDate},
+            </if>
+            <if test="updateBy != null and updateBy != ''">
+                #{updateBy},
+            </if>
+            <if test="updateDate != null">
+                #{updateDate},
+            </if>
+            <if test="remarks != null and remarks != ''">
+                #{remarks},
+            </if>
+            <if test="delFlag != null and delFlag != ''">
+                #{delFlag},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="update" parameterType="GenTable">
+        update gen_table
+        <set>
+                <if test="id != null and id != ''">
+                    id = #{id},
+                </if>
+                <if test="name != null and name != ''">
+                    name = #{name},
+                </if>
+                <if test="comments != null and comments != ''">
+                    comments = #{comments},
+                </if>
+                <if test="createBy != null and createBy != ''">
+                    create_by = #{createBy},
+                </if>
+                <if test="createDate != null">
+                    create_date = #{createDate},
+                </if>
+                <if test="updateBy != null and updateBy != ''">
+                    update_by = #{updateBy},
+                </if>
+                <if test="updateDate != null">
+                    update_date = #{updateDate},
+                </if>
+                <if test="remarks != null and remarks != ''">
+                    remarks = #{remarks},
+                </if>
+                <if test="delFlag != null and delFlag != ''">
+                    del_flag = #{delFlag},
+                </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="delete">
+        delete from gen_table
+        where id = #{id}
+    </delete>
+
+    <select id="get" resultMap="baseResultMap">
+        select <include refid="baseColumns"/>
+        from gen_table a
+        where id = #{id}
+    </select>
+
+    <select id="findList" resultMap="baseResultMap">
+        select <include refid="baseColumns"/>
+        from gen_table a
+        <where>
+            <if test="id != null and id != ''">
+                and id = #{id}
+            </if>
+            <if test="name != null and name != ''">
+                and name like concat('%', #{name}, '%')
+            </if>
+            <if test="comments != null and comments != ''">
+                and comments = #{comments}
+            </if>
+            <if test="createBy != null and createBy != ''">
+                and create_by = #{createBy}
+            </if>
+            <if test="createDate != null">
+                and create_date = #{createDate}
+            </if>
+            <if test="updateBy != null and updateBy != ''">
+                and update_by = #{updateBy}
+            </if>
+            <if test="updateDate != null">
+                and update_date = #{updateDate}
+            </if>
+            <if test="remarks != null and remarks != ''">
+                and remarks = #{remarks}
+            </if>
+            <if test="delFlag != null and delFlag != ''">
+                and del_flag = #{delFlag}
+            </if>
+        </where>
+        order by name
+    </select>
+
+    <!-- 查询所有的表 -->
+    <select id="tableList" resultType="GenTable">
+        select table_name AS "name",table_comment AS "comments"  from information_schema.TABLES where TABLE_SCHEMA=(select database())
+    </select>
+
+    <!-- 清空表数据 -->
+    <delete id="clear">
+        delete from gen_table
+    </delete>
+</mapper>

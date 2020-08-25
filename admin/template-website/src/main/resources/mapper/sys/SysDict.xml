@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vim.modules.sys.dao.SysDictDao">
+
+    <resultMap id="baseResultMap" type="SysDict">
+        <id property="id" column="id" />
+        <result property="label" column="label" />
+        <result property="code" column="code" />
+        <result property="name" column="name" />
+        <result property="value" column="value" />
+        <result property="sort" column="sort" />
+        <result property="isParent" column="is_parent" />
+        <result property="type" column="type" />
+        <result property="createBy" column="create_by" />
+        <result property="createDate" column="create_date" />
+        <result property="updateBy" column="update_by" />
+        <result property="updateDate" column="update_date" />
+        <result property="remarks" column="remarks" />
+        <result property="delFlag" column="del_flag" />
+    </resultMap>
+
+    <sql id="baseColumns">
+        a.id,
+        a.label,
+        a.code,
+        a.name,
+        a.value,
+        a.sort,
+        a.is_parent,
+        a.type,
+        a.create_by,
+        a.create_date,
+        a.update_by,
+        a.update_date,
+        a.remarks,
+        a.del_flag
+    </sql>
+
+    <insert id="save" parameterType="SysDict">
+        insert into sys_dict
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null and id != ''">
+                id,
+            </if>
+            <if test="label != null and label != ''">
+                label,
+            </if>
+            <if test="code != null and code != ''">
+                code,
+            </if>
+            <if test="name != null and name != ''">
+                name,
+            </if>
+            <if test="value != null and value != ''">
+                value,
+            </if>
+            <if test="sort != null and sort != ''">
+                sort,
+            </if>
+            <if test="isParent != null and isParent != ''">
+                is_parent,
+            </if>
+            <if test="type != null and type != ''">
+                type,
+            </if>
+            <if test="createBy != null and createBy != ''">
+                create_by,
+            </if>
+            <if test="createDate != null">
+                create_date,
+            </if>
+            <if test="updateBy != null and updateBy != ''">
+                update_by,
+            </if>
+            <if test="updateDate != null">
+                update_date,
+            </if>
+            <if test="remarks != null and remarks != ''">
+                remarks,
+            </if>
+            <if test="delFlag != null and delFlag != ''">
+                del_flag,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null and id != ''">
+                #{id},
+            </if>
+            <if test="label != null and label != ''">
+                #{label},
+            </if>
+            <if test="code != null and code != ''">
+                #{code},
+            </if>
+            <if test="name != null and name != ''">
+                #{name},
+            </if>
+            <if test="value != null and value != ''">
+                #{value},
+            </if>
+            <if test="sort != null and sort != ''">
+                #{sort},
+            </if>
+            <if test="isParent != null and isParent != ''">
+                #{isParent},
+            </if>
+            <if test="type != null and type != ''">
+                #{type},
+            </if>
+            <if test="createBy != null and createBy != ''">
+                #{createBy},
+            </if>
+            <if test="createDate != null">
+                #{createDate},
+            </if>
+            <if test="updateBy != null and updateBy != ''">
+                #{updateBy},
+            </if>
+            <if test="updateDate != null">
+                #{updateDate},
+            </if>
+            <if test="remarks != null and remarks != ''">
+                #{remarks},
+            </if>
+            <if test="delFlag != null and delFlag != ''">
+                #{delFlag},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="update" parameterType="SysDict">
+        update sys_dict
+        <set>
+                <if test="id != null and id != ''">
+                    id = #{id},
+                </if>
+                <if test="label != null and label != ''">
+                    label = #{label},
+                </if>
+                <if test="code != null and code != ''">
+                    code = #{code},
+                </if>
+                <if test="name != null and name != ''">
+                    name = #{name},
+                </if>
+                <if test="value != null and value != ''">
+                    value = #{value},
+                </if>
+                <if test="sort != null and sort != ''">
+                    sort = #{sort},
+                </if>
+                <if test="isParent != null and isParent != ''">
+                    is_parent = #{isParent},
+                </if>
+                <if test="type != null and type != ''">
+                    type = #{type},
+                </if>
+                <if test="createBy != null and createBy != ''">
+                    create_by = #{createBy},
+                </if>
+                <if test="createDate != null">
+                    create_date = #{createDate},
+                </if>
+                <if test="updateBy != null and updateBy != ''">
+                    update_by = #{updateBy},
+                </if>
+                <if test="updateDate != null">
+                    update_date = #{updateDate},
+                </if>
+                <if test="remarks != null and remarks != ''">
+                    remarks = #{remarks},
+                </if>
+                <if test="delFlag != null and delFlag != ''">
+                    del_flag = #{delFlag},
+                </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="delete">
+        delete from sys_dict
+        where id = #{id}
+    </delete>
+
+    <select id="get" resultMap="baseResultMap">
+        select <include refid="baseColumns"/>
+        from sys_dict a
+        where id = #{id}
+    </select>
+
+    <select id="findList" resultMap="baseResultMap">
+        select <include refid="baseColumns"/>
+        from sys_dict a
+        <where>
+            <if test="id != null and id != ''">
+                and id = #{id}
+            </if>
+            <if test="label != null and label != ''">
+                and label like concat('%', #{label}, '%')
+            </if>
+            <if test="code != null and code != ''">
+                and code like concat('%', #{code}, '%')
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="value != null and value != ''">
+                and value = #{value}
+            </if>
+            <if test="sort != null and sort != ''">
+                and sort = #{sort}
+            </if>
+            <if test="isParent != null and isParent != ''">
+                and is_parent = #{isParent}
+            </if>
+            <if test="type != null and type != ''">
+                and type = #{type}
+            </if>
+            <if test="createBy != null and createBy != ''">
+                and create_by = #{createBy}
+            </if>
+            <if test="createDate != null">
+                and create_date = #{createDate}
+            </if>
+            <if test="updateBy != null and updateBy != ''">
+                and update_by = #{updateBy}
+            </if>
+            <if test="updateDate != null">
+                and update_date = #{updateDate}
+            </if>
+            <if test="remarks != null and remarks != ''">
+                and remarks = #{remarks}
+            </if>
+            <if test="delFlag != null and delFlag != ''">
+                and del_flag = #{delFlag}
+            </if>
+        </where>
+        order by code
+    </select>
+
+    <!-- 根据code删除字典(不删除父级) -->
+    <delete id="deleteByCode">
+        delete from sys_dict
+        where code = #{code} and is_parent = "0"
+    </delete>
+
+    <!-- 根据code删除字典 -->
+    <delete id="deleteAllByCode">
+        delete from sys_dict
+        where code = #{code}
+    </delete>
+
+    <!-- 根据code查找字典 -->
+    <select id="getDictListByCode" resultMap="baseResultMap">
+        select <include refid="baseColumns"/>
+        from sys_dict a
+        where code = #{code} and is_parent = "0" order by sort
+    </select>
+</mapper>

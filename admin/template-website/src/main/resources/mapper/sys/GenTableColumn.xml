@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vim.modules.sys.dao.GenTableColumnDao">
+
+    <resultMap id="baseResultMap" type="GenTableColumn">
+        <id property="id" column="id" />
+        <result property="tableId" column="table_id" />
+        <result property="name" column="name" />
+        <result property="displayName" column="display_name" />
+        <result property="jdbcType" column="jdbc_type" />
+        <result property="javaType" column="java_type" />
+        <result property="length" column="length" />
+        <result property="isPk" column="is_pk" />
+        <result property="isNull" column="is_null" />
+        <result property="isList" column="is_list" />
+        <result property="isEdit" column="is_edit" />
+        <result property="isQuery" column="is_query" />
+        <result property="queryType" column="query_type" />
+        <result property="showType" column="show_type" />
+        <result property="dictType" column="dict_type" />
+        <result property="comments" column="comments" />
+        <result property="sort" column="sort" />
+        <result property="createBy" column="create_by" />
+        <result property="createDate" column="create_date" />
+        <result property="updateBy" column="update_by" />
+        <result property="updateDate" column="update_date" />
+        <result property="remarks" column="remarks" />
+        <result property="delFlag" column="del_flag" />
+    </resultMap>
+
+    <sql id="baseColumns">
+        a.id,
+        a.table_id,
+        a.name,
+        a.display_name,
+        a.jdbc_type,
+        a.java_type,
+        a.length,
+        a.is_pk,
+        a.is_null,
+        a.is_list,
+        a.is_edit,
+        a.is_query,
+        a.query_type,
+        a.show_type,
+        a.dict_type,
+        a.comments,
+        a.sort,
+        a.create_by,
+        a.create_date,
+        a.update_by,
+        a.update_date,
+        a.remarks,
+        a.del_flag
+    </sql>
+
+    <insert id="save" parameterType="GenTableColumn">
+        insert into gen_table_column
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null and id != ''">
+                id,
+            </if>
+            <if test="tableId != null and tableId != ''">
+                table_id,
+            </if>
+            <if test="name != null and name != ''">
+                name,
+            </if>
+            <if test="displayName != null and displayName != ''">
+                display_name,
+            </if>
+            <if test="jdbcType != null and jdbcType != ''">
+                jdbc_type,
+            </if>
+            <if test="javaType != null and javaType != ''">
+                java_type,
+            </if>
+            <if test="length != null and length != ''">
+                length,
+            </if>
+            <if test="isPk != null and isPk != ''">
+                is_pk,
+            </if>
+            <if test="isNull != null and isNull != ''">
+                is_null,
+            </if>
+            <if test="isList != null and isList != ''">
+                is_list,
+            </if>
+            <if test="isEdit != null and isEdit != ''">
+                is_edit,
+            </if>
+            <if test="isQuery != null and isQuery != ''">
+                is_query,
+            </if>
+            <if test="queryType != null and queryType != ''">
+                query_type,
+            </if>
+            <if test="showType != null and showType != ''">
+                show_type,
+            </if>
+            <if test="dictType != null and dictType != ''">
+                dict_type,
+            </if>
+            <if test="comments != null and comments != ''">
+                comments,
+            </if>
+            <if test="sort != null and sort != ''">
+                sort,
+            </if>
+            <if test="createBy != null and createBy != ''">
+                create_by,
+            </if>
+            <if test="createDate != null">
+                create_date,
+            </if>
+            <if test="updateBy != null and updateBy != ''">
+                update_by,
+            </if>
+            <if test="updateDate != null">
+                update_date,
+            </if>
+            <if test="remarks != null and remarks != ''">
+                remarks,
+            </if>
+            <if test="delFlag != null and delFlag != ''">
+                del_flag,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null and id != ''">
+                #{id},
+            </if>
+            <if test="tableId != null and tableId != ''">
+                #{tableId},
+            </if>
+            <if test="name != null and name != ''">
+                #{name},
+            </if>
+            <if test="displayName != null and displayName != ''">
+                #{displayName},
+            </if>
+            <if test="jdbcType != null and jdbcType != ''">
+                #{jdbcType},
+            </if>
+            <if test="javaType != null and javaType != ''">
+                #{javaType},
+            </if>
+            <if test="length != null and length != ''">
+                #{length},
+            </if>
+            <if test="isPk != null and isPk != ''">
+                #{isPk},
+            </if>
+            <if test="isNull != null and isNull != ''">
+                #{isNull},
+            </if>
+            <if test="isList != null and isList != ''">
+                #{isList},
+            </if>
+            <if test="isEdit != null and isEdit != ''">
+                #{isEdit},
+            </if>
+            <if test="isQuery != null and isQuery != ''">
+                #{isQuery},
+            </if>
+            <if test="queryType != null and queryType != ''">
+                #{queryType},
+            </if>
+            <if test="showType != null and showType != ''">
+                #{showType},
+            </if>
+            <if test="dictType != null and dictType != ''">
+                #{dictType},
+            </if>
+            <if test="comments != null and comments != ''">
+                #{comments},
+            </if>
+            <if test="sort != null and sort != ''">
+                #{sort},
+            </if>
+            <if test="createBy != null and createBy != ''">
+                #{createBy},
+            </if>
+            <if test="createDate != null">
+                #{createDate},
+            </if>
+            <if test="updateBy != null and updateBy != ''">
+                #{updateBy},
+            </if>
+            <if test="updateDate != null">
+                #{updateDate},
+            </if>
+            <if test="remarks != null and remarks != ''">
+                #{remarks},
+            </if>
+            <if test="delFlag != null and delFlag != ''">
+                #{delFlag},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="update" parameterType="GenTableColumn">
+        update gen_table_column
+        <set>
+            <if test="id != null and id != ''">
+                id = #{id},
+            </if>
+            <if test="tableId != null and tableId != ''">
+                table_id = #{tableId},
+            </if>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="displayName != null and displayName != ''">
+                display_name = #{displayName},
+            </if>
+            <if test="jdbcType != null and jdbcType != ''">
+                jdbc_type = #{jdbcType},
+            </if>
+            <if test="javaType != null and javaType != ''">
+                java_type = #{javaType},
+            </if>
+            <if test="length != null and length != ''">
+                length = #{length},
+            </if>
+            <if test="isPk != null and isPk != ''">
+                is_pk = #{isPk},
+            </if>
+            <if test="isNull != null and isNull != ''">
+                is_null = #{isNull},
+            </if>
+            <if test="isList != null and isList != ''">
+                is_list = #{isList},
+            </if>
+            <if test="isEdit != null and isEdit != ''">
+                is_edit = #{isEdit},
+            </if>
+            <if test="isQuery != null and isQuery != ''">
+                is_query = #{isQuery},
+            </if>
+            <if test="queryType != null and queryType != ''">
+                query_type = #{queryType},
+            </if>
+            <if test="showType != null and showType != ''">
+                show_type = #{showType},
+            </if>
+            <if test="dictType != null and dictType != ''">
+                dict_type = #{dictType},
+            </if>
+            <if test="comments != null and comments != ''">
+                comments = #{comments},
+            </if>
+            <if test="sort != null and sort != ''">
+                sort = #{sort},
+            </if>
+            <if test="createBy != null and createBy != ''">
+                create_by = #{createBy},
+            </if>
+            <if test="createDate != null">
+                create_date = #{createDate},
+            </if>
+            <if test="updateBy != null and updateBy != ''">
+                update_by = #{updateBy},
+            </if>
+            <if test="updateDate != null">
+                update_date = #{updateDate},
+            </if>
+            <if test="remarks != null and remarks != ''">
+                remarks = #{remarks},
+            </if>
+            <if test="delFlag != null and delFlag != ''">
+                del_flag = #{delFlag},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="delete">
+        delete from gen_table_column
+        where id = #{id}
+    </delete>
+
+    <select id="get" resultMap="baseResultMap">
+        select <include refid="baseColumns"/>
+        from gen_table_column a
+        where id = #{id}
+    </select>
+
+    <select id="findList" resultMap="baseResultMap">
+        select <include refid="baseColumns"/>
+        from gen_table_column a
+        <where>
+            <if test="id != null and id != ''">
+                and id = #{id}
+            </if>
+            <if test="tableId != null and tableId != ''">
+                and table_id = #{tableId}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="displayName != null and displayName != ''">
+                and display_name = #{displayName}
+            </if>
+            <if test="jdbcType != null and jdbcType != ''">
+                and jdbc_type = #{jdbcType}
+            </if>
+            <if test="javaType != null and javaType != ''">
+                and java_type = #{javaType}
+            </if>
+            <if test="length != null and length != ''">
+                and length = #{length}
+            </if>
+            <if test="isPk != null and isPk != ''">
+                and is_pk = #{isPk}
+            </if>
+            <if test="isNull != null and isNull != ''">
+                and is_null = #{isNull}
+            </if>
+            <if test="isList != null and isList != ''">
+                and is_list = #{isList}
+            </if>
+            <if test="isEdit != null and isEdit != ''">
+                and is_edit = #{isEdit}
+            </if>
+            <if test="isQuery != null and isQuery != ''">
+                and is_query = #{isQuery}
+            </if>
+            <if test="queryType != null and queryType != ''">
+                and query_type = #{queryType}
+            </if>
+            <if test="showType != null and showType != ''">
+                and show_type = #{showType}
+            </if>
+            <if test="dictType != null and dictType != ''">
+                and dict_type = #{dictType}
+            </if>
+            <if test="comments != null and comments != ''">
+                and comments = #{comments}
+            </if>
+            <if test="createBy != null and createBy != ''">
+                and create_by = #{createBy}
+            </if>
+            <if test="createDate != null">
+                and create_date = #{createDate}
+            </if>
+            <if test="updateBy != null and updateBy != ''">
+                and update_by = #{updateBy}
+            </if>
+            <if test="updateDate != null">
+                and update_date = #{updateDate}
+            </if>
+            <if test="remarks != null and remarks != ''">
+                and remarks = #{remarks}
+            </if>
+            <if test="delFlag != null and delFlag != ''">
+                and del_flag = #{delFlag}
+            </if>
+        </where>
+        order by sort
+    </select>
+
+    <!-- 查询表中的所有字段 -->
+    <select id="tableColumnList" resultType="GenTableColumn">
+        select
+        column_name AS "name",
+        column_comment AS "comments",
+        data_type AS "jdbcType",
+        character_maximum_length AS "length",
+        CASE column_key WHEN 'PRI' THEN 1 ELSE 0 END AS "isPk",
+        ordinal_position AS "sort",
+        CASE is_nullable WHEN 'NO' THEN 0 ELSE 1 END AS "isNull"
+        from information_schema.COLUMNS
+        where table_name = #{tableName} and TABLE_SCHEMA=(select database())
+    </select>
+
+    <!-- 清空表数据 -->
+    <delete id="clear">
+        delete from gen_table_column
+    </delete>
+</mapper>

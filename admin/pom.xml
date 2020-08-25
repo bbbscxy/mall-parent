@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <!-- springboot 版本 -->
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.0.3.RELEASE</version>
+  </parent>
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.vim</groupId>
+  <artifactId>template</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>template-website</module>
+  </modules>
+  <packaging>pom</packaging>
+
+  <properties>
+    <sonar.inclusions>
+      src/main/java/**/*
+    </sonar.inclusions>
+  </properties>
+
+  <!-- 使用阿里云仓库 -->
+  <repositories>
+    <repository>
+      <id>nexus-aliyun</id>
+      <name>Nexus aliyun</name>
+      <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+    </repository>
+  </repositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <optional>true</optional>
+    </dependency>
+  </dependencies>
+
+  <profiles>
+    <profile>
+      <id>dev-company</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <!-- 暴露端口 -->
+        <website.server.port>9000</website.server.port>
+
+        <!-- 模块数据库信息 -->
+        <module.datasource.driverClassName>com.mysql.jdbc.Driver</module.datasource.driverClassName>
+        <module.datasource.url><![CDATA[jdbc:mysql://47.93.185.126:3306/website?allowMultiQueries=true&useUnicode=true&characterEncoding=utf-8]]></module.datasource.url>
+        <module.datasource.username>root</module.datasource.username>
+        <module.datasource.password>root</module.datasource.password>
+
+        <!-- 线程数量设置：登录日志、操作日志、消息推送 -->
+        <login.log.thread.num>2</login.log.thread.num>
+        <operate.log.thread.num>2</operate.log.thread.num>
+        <msg.push.thread.num>2</msg.push.thread.num>
+
+        <!-- 目录设置：ehcache、log -->
+        <ehcache.dir>d:/ehcache</ehcache.dir>
+        <log.dir>d:/logs</log.dir>
+      </properties>
+    </profile>
+  </profiles>
+
+  <!-- 设置编译环境 -->
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <configuration>
+          <nonFilteredFileExtensions>
+            <nonFilteredFileExtension>woff</nonFilteredFileExtension>
+            <nonFilteredFileExtension>woff2</nonFilteredFileExtension>
+            <nonFilteredFileExtension>eot</nonFilteredFileExtension>
+            <nonFilteredFileExtension>ttf</nonFilteredFileExtension>
+            <nonFilteredFileExtension>svg</nonFilteredFileExtension>
+          </nonFilteredFileExtensions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
